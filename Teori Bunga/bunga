@@ -1,0 +1,21 @@
+#num=pilihan, 1:bunga tunggal, 2:bunga majemuk nominal 3:bunga majemuk kontinu
+#At=nilai akumulasi
+#k=modal
+#t=waktu
+#i=bunga
+
+bunga=function(num,At,k,t,m=TRUE)
+{
+  switch(num,
+         satu={
+           bunga=(At/k-1)/t
+           cat("Bunga tunggal: ", bunga)},
+         dua={
+           bunga=m*((At/k)^(1/(m*t))-1)
+           cat("Bunga majemuk nominal: ", bunga)},
+         tiga={
+           bunga=log(At/k)/t
+           cat("Bunga majemuk kontinu: ", bunga)
+         }
+         )
+}
